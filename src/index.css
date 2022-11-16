@@ -1,0 +1,17 @@
+.container-images img {
+    width: 200px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.container-titulares img {
+    width: 200px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container-images button {
+    margin-left: 20px;
+}
+

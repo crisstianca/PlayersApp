@@ -7,24 +7,18 @@ export const PlayersPage = () => {
     const dispatch = useDispatch()
     const { totalPlayers, totalTitulares, totalSuplentes } =  useSelector( state => state.players)    
 
-   
-    // const onClickTitular = () => {
-        
-    // }
-
-    // const onClickSuplente = () => {
-
-    // }
-    
     return (
         <>
-            <div>
-                <h1>  PlayersPage </h1>
+            <div className='title'>
+                <h1>  Alineacion PSG </h1>
             </div>
 
             {/* <button className='btn btn-primary' onClick={ () => { } }> Resetear </button> */}
+        <div className='row'>
 
-            <div className='container-images'>
+            <div className='col container-images'>
+                <div> <h2> <b> Lista de Jugadores </b>  </h2></div>
+                <hr />
                 { 
                     totalPlayers.map( (player, index ) => { 
                         return <div className='images'>
@@ -39,9 +33,10 @@ export const PlayersPage = () => {
                 } 
             </div>    
 
-            <div className='container-titulares'>
-                <h2> Titulares </h2>
+            <div className='col container-titulares'>
                 <div className='container-titularesInfo'>
+                <div> <h2> <b> Titulares </b> </h2></div>
+                <hr />
                     { 
                         totalTitulares.map( titular => {
                             return <div className='images'>
@@ -55,9 +50,10 @@ export const PlayersPage = () => {
                     }
                 </div>
             </div> 
-            <div className='container-titulares'>
-                <h2> Suplentes </h2>
+            <div className='col container-titulares'>
                 <div className='container-suplentesInfo'>
+                <h2> <b> Suplentes </b> </h2>
+                <hr />
                     {
                         totalSuplentes.map( suplente => {
                             return <div className='images'>
@@ -71,6 +67,7 @@ export const PlayersPage = () => {
                     }
                 </div>
             </div> 
+        </div>
         </>
     )
 }

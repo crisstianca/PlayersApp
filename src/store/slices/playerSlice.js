@@ -12,23 +12,33 @@ export const playerSlice = createSlice({
             {
                 id: 2,
                 name: 'Neymar',
-                img: 'src/img/neymar.jpg'
+                img: 'src/img/neymar.png'
             },
             {
                 id: 3,
                 name: 'Mbape',
-                img: 'src/img/mbape.jpg'
+                img: 'src/img/mbape.png'
             },
             {
                 id: 4,
                 name: 'Sergio Ramos',
-                img: 'src/img/ramos.jpg'
+                img: 'src/img/ramos.png'
             },
             {
                 id: 5,
-                name: 'Angel Di Maria',
-                img: 'src/img/maria.webp'
-            }
+                name: 'Renato',
+                img: 'src/img/renato.png'
+            },
+            {
+                id: 6,
+                name: 'Hakimi',
+                img: 'src/img/hakimi.png'
+            },
+            {
+                id: 6,
+                name: 'Donnarumma',
+                img: 'src/img/donnarumma.png'
+            },
         ],
         totalTitulares: [],
         totalSuplentes: [],

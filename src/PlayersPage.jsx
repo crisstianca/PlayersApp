@@ -7,16 +7,18 @@ export const PlayersPage = () => {
     const dispatch = useDispatch()
     const { totalPlayers, totalTitulares, totalSuplentes } =  useSelector( state => state.players)    
 
-
     const onAddTitular = ( player ) => {
         dispatch(getPlayerTitular( player, totalPlayers ))
     }
+
     const onAddSuplente = ( player ) => {
         dispatch(getPlayerSuplente( player, totalPlayers ))
     }
+
     const onRemoveTitulares = ( titular ) => {
         dispatch(backPlayerTitular( titular, totalTitulares))
     }
+
     const onRemoveSuplentes = ( suplente ) => {
         dispatch(backPlayerSuplente( suplente, totalSuplentes ))
     }
@@ -26,31 +28,33 @@ export const PlayersPage = () => {
             return <div className='images'>
                 <h3> {player.name} </h3>
                 <img src={ player.img } alt={player.name } /> 
-                <div className='container-buttons'>
-                    <button onClick={ () => onAddTitular( player )} className='btn btn-primary'> Titular </button>
-                    <button onClick={ () => onAddSuplente( player ) } className='btn btn-danger'> Suplente </button>
+                <div className=' container-buttons'>
+                    <button onClick={ () => onAddTitular( player )} className='m-2 ms-2 btn btn-primary'> Titular </button>
+                    <button onClick={ () => onAddSuplente( player ) } className='m-2 ms-2 btn btn-danger'> Suplente </button>
                 </div>
             </div>   
         })  
     }
+
     const renderTitulares = () => {
         return totalTitulares.map( titular => {
             return <div className='images'>
             <h3> {titular.name} </h3>
             <img src={ titular.img } alt={titular.name } /> 
             <div className='containerButtonQuitar'>
-                <button onClick={ () => onRemoveTitulares( titular ) } className='btn btn-danger'> X </button>
+                <button onClick={ () => onRemoveTitulares( titular ) } className=' mt-2 btn btn-danger'> Quitar X </button>
             </div>
         </div>   
         })
-    }
+    } 
+
     const renderSuplentes = () => {
         return totalSuplentes.map( suplente => {
             return <div className='images'>
             <h3> {suplente.name} </h3>
             <img src={ suplente.img } alt={suplente.name } /> 
             <div className='containerButtonQuitar'>
-                <button onClick={ () => onRemoveSuplentes( suplente ) } className='btn btn-danger'> X </button>
+                <button onClick={ () => onRemoveSuplentes( suplente ) } className=' mt-2 btn btn-danger'> Quitar X </button>
             </div>
         </div>   
         })  
@@ -68,27 +72,24 @@ export const PlayersPage = () => {
                     <div> <h2> <b> Lista de Jugadores </b>  </h2></div>
                     <hr />
                     { renderPlayers() } 
-
                 </div>    
 
                 <div className='col text-center '>
                     <div className='container-titularesInfo'>
                     <div> <h2> <b> Titulares </b> </h2></div>
                     <hr />
-                        { 
-                            renderTitulares()
-                        }
+                        { renderTitulares() }
                     </div>
                 </div> 
+
                 <div className='col text-center'>
                     <div className='container-suplentesInfo'>
                     <h2> <b> Suplentes </b> </h2>
                     <hr />
-                        {
-                            renderSuplentes()
-                        }
+                        { renderSuplentes() }
                     </div>
                 </div> 
+
             </div>
         </div>
     )

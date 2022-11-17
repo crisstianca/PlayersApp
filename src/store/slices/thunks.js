@@ -4,11 +4,7 @@ import { restablecerPlayers, restablecerPlayersSuplentes, setPlayers, setSuplent
     export const getPlayerTitular = ( player, totalPlayers ) => {
         return async( dispatch, getState) => {
 
-            console.log('Totla: ', totalPlayers, player)
-
             const nuevoArrya = totalPlayers.filter( ( playerIndividual) => playerIndividual.id !== player.id )
-
-            console.log('NuevoArray: ', nuevoArrya )
 
             dispatch(setPlayers({ totalPlayers: nuevoArrya }) )
             dispatch(setTitulares({ totalTitulares: player }) )
